@@ -1,0 +1,214 @@
+@import '~antd/dist/antd.css';
+
+$color1: #fff;
+$color2: #FF1800;
+$fw500: 500;
+$fs12: 12px;
+$fs18: 18px;
+$fs50: 50px;
+$taCenter: center;
+$bsCover: cover;
+
+
+@mixin flex($case1: center, $case2: center) {
+  display: flex;
+  justify-content: $case1;
+  align-items: $case2;
+}
+
+@mixin imgSide {
+  background-size: $bsCover;
+  position: relative;
+  text-align: $taCenter;
+  height: 100%;
+}
+
+@mixin logo($mb) {
+  @include flex;
+  margin-bottom: $mb;
+  font-size: 90px;
+  opacity: 0.2;
+}
+
+
+.bg {
+  @include flex;
+  background: url(./loginbg.jpg) no-repeat 50% fixed;
+  background-size: $bsCover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.logo1 {
+  @include logo($mb: 55px)
+}
+.logo2 {
+  @include logo($mb: 25px)
+}
+
+.inputIcon {
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+
+.authCard {
+  width: 70%;
+  height: 70%;
+  background: $color1;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 15px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
+  border-radius: 10px;
+  position: sticky;
+}
+
+.imageSide {
+  background: url(./loginbg.jpg) no-repeat top;
+  @include imgSide;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.imageSide2 {
+  background: url(./loginbg2.jpg) ;
+  @include imgSide;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; 
+}
+
+.isContainer {
+  margin: 0;
+  position: absolute;
+  top: 30%;
+}
+
+.isTitle {
+  color: $color1;
+  font-size: 2.5rem;
+  font-family: Monospace;
+  font-weight: bold;
+}
+
+.isPassage {
+  color: $color1;
+  font-size: $fs18;
+  padding: 10px 40px 0 40px
+}
+
+.formSide {
+  padding: 60px 70px 40px 70px ;
+  height: 100%;
+}
+
+.fsButton {
+  width: 100%;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.fsOther {
+  font-weight: 600;
+}
+
+.tableBg {
+  background-color: rgba(24, 144, 255, 0.05);
+  background-size: $bsCover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.tableCont {
+  margin: 50px;
+  font-weight: $fw500;
+}
+
+.navbar {
+  background-color: rgba(43, 43, 43, 0.8);
+  box-shadow: 0 5px 10px rgba(90, 90, 90, 0.8);
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 40px;
+  @include flex($case2: space-between)
+}
+
+
+.navTitle1 {
+  color: $color1;
+  margin-left: 30px;
+}
+
+.navContainer {
+  @include flex;
+  margin-right: 30px;
+}
+
+.navIcon {
+  color: $color1;
+  font-size: $fs12;
+  margin-bottom: 0;
+}
+
+.navTitle2 {
+  color: $color1;
+  margin-right: 4px;
+  margin-bottom: 0;
+}
+
+.loading {
+  @include flex;
+  font-size: $fs50;
+  margin-top: 200px;
+}
+
+.errorContainer {
+  margin-top: 200px;
+  text-align: $taCenter;
+}
+
+.errorIcon {
+  font-size: $fs50;
+}
+
+.errorTitle {
+  color: $color2;
+  font-size: $fs18;
+  margin-top: 8px;
+  font-weight: 700;
+}
+.feedbackMessage {
+  @include flex($case1: unset);
+  color: $color2;
+  font-weight: $fw500;
+  font-size: $fs12;
+}
+
+.feedbackIcon {
+  margin-right: 3px;
+}
+
+table {
+  thead {
+    background-color: #FAFAFA;
+    color: #252525;
+    th {
+      font-weight: $fw500;
+    }
+  }
+  tbody {
+    background-color: $color1;
+    color: #666666;
+  }
+}
+
+
