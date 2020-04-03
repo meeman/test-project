@@ -1,6 +1,8 @@
 import React from 'react';
-import LoginPage from './Components/LoginPage';
-import SignupPage from './Components/SignupPage';
+// import LoginPage from './Components/LoginPage';
+// import SignupPage from './Components/SignupPage';
+import LoginPage2 from './Components/LoginPage2';
+import SignupPage2 from './Components/SignupPage2'
 import HomePage from './Components/HomePage';
 import { ApolloClient } from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -13,6 +15,7 @@ import {
   ROUTE_Home
 } from './routes'
 import { UserContextProvider } from './Components/context/user-context';
+
 
 
 
@@ -31,8 +34,8 @@ function App() {
       <UserContextProvider>
         <BrowserRouter>
           <Switch>
-            <Route path={ROUTE_LOGIN()} exact component={LoginPage} />
-            <Route path={ROUTE_SIGNUP()} exact component={SignupPage} />
+            <Route path={ROUTE_LOGIN()} exact component={LoginPage2} />
+            <Route path={ROUTE_SIGNUP()} exact component={SignupPage2} />
             <Route path={ROUTE_Home()} exact component={HomePage} />
           </Switch>
         </BrowserRouter>

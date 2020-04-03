@@ -1,7 +1,10 @@
+
+/*** Validation With Formik & Yup ***/
+
 import React, { useContext, useRef } from 'react'
 import { Input, Button, Col, Row, Form  } from 'antd'
 import {
-  ExclamationCircleOutlined  ,
+  ExclamationCircleOutlined,
   BulbOutlined, 
   UserOutlined,
   MailOutlined,
@@ -92,7 +95,7 @@ export default function SignupView() {
                   <Button type="primary" onClick={handleSubmit} className="fsButton">
                     Sign Up
                   </Button>
-                  Already have an account? <Link className="fsOther" to="/">Login</Link>
+                  Already Have An Account? <Link className="fsOther" to="/">Login</Link>
                   </Form.Item>
                 </Form>
               </div>
@@ -161,10 +164,10 @@ const PasswordInputComponent = ({
   return (
     <Form.Item style={{marginTop: -10}}>
       <Input
-       type="text" 
-       {...field} 
-       {...props} 
-       addonBefore={<KeyOutlined className='inputIcon'/>}
+        type="text" 
+        {...field} 
+        {...props} 
+        addonBefore={<KeyOutlined className='inputIcon'/>}
        />
       {touched.password && errors.password &&
         <div className="feedbackMessage"><ExclamationCircleOutlined className="feedbackIcon"/>{errors.password}</div>}

@@ -1,9 +1,9 @@
 import React, { useReducer, createContext } from 'react'
+import UserReducer from './UserReducer'
 
 
 export const UserContext = createContext()
 
-// initial state 
 const initialState = {
     users: [
         {
@@ -33,26 +33,8 @@ const initialState = {
     ],
 }
 
-// reducer function
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'ADD_USER':
-        return {
-            users: [...state.users, action.payload]
-        }
-    case 'DELETE_USER':
-        return {
-            users: state.users.filter(
-                user => user.id !== action.payload
-            )
-        }
-    default:
-        return state
-  }
-}
-
 export const UserContextProvider = props => {
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(UserReducer, initialState)
 
     return (
         <UserContext.Provider value={{userData: state.users, dispatch}}>
